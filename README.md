@@ -1,6 +1,7 @@
 - 👋 Hi, I’m Nowshad Khan.
 - 👀 I’m interested in Web Development and Big Data.
-- 🌱 I’m currently learning PySpark, SQL, HTML,CSS,JavaScript, Python.
+- 🌱 Currently working as an Data Engineer. TECH: PySpark || SQL || Python.
+- ☁️ Google Cloud Platform
 - 💞️ I’m looking to collaborate on BigData technologies.
 - 📫 How to reach me? @nowsadk07 on twitter and nowshadk07@gmail.com is my e-mail.
 
