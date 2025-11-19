@@ -1,0 +1,85 @@
+var selectedCard = 'card1';
+var work;
+var editedCardTitle;
+var filter = 'add';
+function selectedCard(card) {
+
+   selectedCard = card;
+   chnageMode()
+}
+
+
+function addwork() {
+
+    work = document.getElementById('work').value;
+    if(work !==undefined && work !== '' && work !== null){
+      var d1 = document.getElementById(selectedCard + 'List');
+      d1.insertAdjacentHTML('beforeend', `<li>${work}</li>`);
+      document.getElementById('work').value= '';
+      work = '';
+    }
+}
+
+function deleteWork(taskId) {
+
+    const del = document.querySelector(`.${selectedCard} #${tasked}`);
+    del.parentElement.remove();
+}
+
+function update() {
+
+    editedCardTitle =document.getElementById('cardTitle').value;
+    if(editedCardTitle !==undefined && editedCardTitle !== '' && editedCardTitle !== null){
+       var outerDiv = document.getElementById(selectedCard);
+       outerDiv.getElementsByTagNameNS("h2")[0].textContent = editedCardTitle;
+       filter = 'add'
+       document.getElementById('edit').style.display = 'none';
+       document.getElementById('add').style.display = 'block';
+    } 
+}
+
+function clearWorkList() {
+  document.getElementById('card1List').remove();
+  document.getElementById('card2List').remove();
+  document.getElementById('card3List').remove();
+  selectedCard = 'card1';
+  work = '';
+  editedCardTitle = '';
+  firer = 'add';
+}
+
+function chnageMode() {
+  if(document.getElementById('addwork').checked){
+    filter = document.getElementById('addwork').value;
+  }else if(document.getElementById('editTitle').checked){
+    filter = document.getElementById('editTitle').value;
+  }else if(document.getElementById('delete').checked){
+    filter = document.getElementById('delete').value; 
+  }
+
+  if(filter === 'add'){
+    document.getElementById('edit').style.display = 'none';
+    document.getElementById('add').style.display = 'block';
+  }else if(filter == 'edit'){
+    document.getElementById('edit').style.display = 'block';
+    document.getElementById('add').style.display = 'none';
+    var outerDiv = document.getElementById(selectedCard);
+    var h2s = outerDiv.getElementsByTagName("h2")[0].textContent;
+    document.getElementById('cardTitle').value = h2s
+    editedCardTitle = h2s;
+  s}else if(filter =='delete'){
+    document.getElementById('edit').style.display = 'none';
+    document.getElementById('add').style.display = 'none';
+    document.querySelectorAll('.deleteTask').forEach(e => e.remove());
+
+    var selector = '.' + selectedCard + 'ul li';
+    const ul1 =document.querySelectorAll(selector)
+    for(var i=0; i < ul1.length; i++){
+      uli[i].insertAdjacentHTML('afterbegin', `<button onclick="deleteWork('deletedBtn${i + 1}')" class="deletedTask" id="deleteBtn${i + 1}>"</button>`)
+    }
+  }
+}
+
+function deleteMod(){
+
+}
